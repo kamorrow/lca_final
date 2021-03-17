@@ -1,0 +1,23 @@
+﻿category,type,Container Filling <u-so>,Container use <u-so>,EU-28: Container glass ts <p-agg>,EU-28: Glass/inert waste on landfill ts,GLO: Compressed air 7 bar (medium power consumption) ts <u-so>,GLO: Steel sheet stamping and bending (5% loss) ts <u-so>,GLO: Steel tinplated worldsteel,"GLO: Truck, Euro 4, 20 - 26t gross weight / 17.3t payload capacity ts <u-so>","GLO: Truck, Euro 4, 28 - 32t gross weight / 22t payload capacity ts <u-so>","GLO: Truck, Euro 4, 28 - 32t gross weight / 22t payload capacity ts <u-so>",US: Diesel mix at refinery ts,US: Electricity grid mix ts,US: Lubricants at refinery ts,production_total,transportation_total,end_of_life,total,epa_eq,production_norm,transportation_norm,end_of_life_norm
+"TRACI 2.1, Ecotoxicity (recommended) [CTUe]",glass,0,0,0.007357565,0.000613229,0,0,0.001250459,8.50E-10,3.54E-09,3.10E-11,0.01158841,3.53E-06,3.23E-07,8.61E-03,1.16E-02,0.000613229,2.08E-02,11100,7.76E-07,1.04E-06,5.52459E-08
+"TRACI 2.1, Eutrophication [kg N eq.]",glass,0,0,0.000146318,2.32E-06,0,0,2.40E-06,5.60E-06,2.01E-05,1.76E-07,1.59E-05,1.82E-08,1.08E-10,1.49E-04,4.17E-05,2.31876E-06,1.93E-04,21.6,6.89E-06,1.93E-06,1.0735E-07
+"TRACI 2.1, Global Warming Air, incl. biogenic carbon [kg CO2 eq.]",glass,0,0,0.498450457,0.007836214,0,0,0.014864567,0.015776793,0.059215867,0.000519437,0.009433277,0.000157845,7.36E-07,5.13E-01,8.49E-02,0.007836214,6.06E-01,24200,2.12E-05,3.51E-06,3.2381E-07
+"TRACI 2.1, Human toxicity, cancer ",glass,0,0,1.95E-10,5.78E-11,0,0,3.95E-12,3.95E-15,1.64E-14,1.44E-16,5.24E-11,3.62E-14,1.30E-15,1.99E-10,5.24E-11,5.78E-11,3.09E-10,5.07E-05,3.92E-06,1.03E-06,1.14004E-06
+"TRACI 2.1, Human toxicity, non-canc. (recommended) [CTUh]",glass,0,0,2.10E-08,6.82E-09,0,0,4.83E-10,9.99E-16,4.16E-15,3.65E-17,4.15E-09,3.09E-12,1.06E-13,2.15E-08,4.15E-09,6.81719E-09,3.25E-08,0.00105,2.05E-05,3.95E-06,6.49256E-06
+"TRACI 2.1, Ozone Depletion Air [kg CFC 11 eq.]",glass,0,0,2.06E-15,4.31E-17,0,0,1.16E-17,0,0,0,9.15E-18,7.60E-19,5.67E-22,2.07E-15,9.15E-18,4.30917E-17,2.12E-15,0.161,1.28E-14,5.69E-17,2.6765E-16
+"TRACI 2.1, Smog Air [kg O3 eq.]",glass,0,0,0.042695005,0.001021338,0,0,0.000604276,0.002037861,0.007327147,6.43E-05,0.00071994,3.42E-06,2.49E-08,4.33E-02,1.01E-02,0.001021338,5.45E-02,1390,3.12E-05,7.30E-06,7.34775E-07
+"TRACI 2.1, Acidification [kg SO2 eq.]",glass,0,0,0.002961673,5.38E-05,0,0,3.66E-05,8.76E-05,0.000314717,2.76E-06,3.82E-05,2.40E-07,1.28E-09,3.00E-03,4.43E-04,5.37697E-05,3.50E-03,90.8,3.30E-05,4.88E-06,5.92178E-07
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,

@@ -1,0 +1,305 @@
+---
+title: "Analysis of Beverage Containers"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r echo=FALSE, error=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+library("tidyverse")
+library("janitor")
+library("ggsci")
+library("knitr")
+library("kableExtra")
+library("here")
+```
+
+```{r echo=FALSE, error=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+# Read in and clean data
+
+aluminum_clean <- read_csv("aluminum_final.csv") %>%
+  clean_names() %>%
+  rename("category" = "x1") %>%
+  rename("base" = "medium") %>%
+  mutate(type = "aluminum") %>%
+  drop_na()
+
+pet_clean <- read_csv("pet_final.csv") %>%
+  clean_names() %>%
+  rename("category" = "x1") %>%
+  mutate(type = "PET") %>%
+  rename("base" = "medium") %>%
+  drop_na() 
+
+glass_clean <- read_csv("glass_final.csv") %>%
+  clean_names() %>%
+  rename("category" = "x1") %>%
+  rename("base" = "medium") %>%
+  mutate(type = "glass") %>%
+  drop_na()
+```
+
+```{r echo=FALSE, error=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+#Combine data for can, and both bottles and save it
+
+all_data <- rbind(glass_clean, pet_clean, aluminum_clean)
+
+# write_csv(all_data, 'all_data.csv')
+```
+
+```{r echo=FALSE, error=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+# Clean up in excel and read back in
+
+all_data_clean <- read_csv("all_data_clean.csv")
+
+# Retrieve categories of interest
+
+sel_data <- all_data_clean %>%
+  filter(category %in% c("Acidification", "Ecotoxicity", "Eutrophication", "Global Warming Air", "Smog Air", "Human Toxicity (cancer)", "Human Toxicity (non-cancer)"))
+
+# Final data for each container
+
+al_sel <- sel_data %>%
+  filter(type == "aluminum") %>%
+  select(-type, -epa_eq, -low, -high, -base, -unit) %>%
+  pivot_longer(!category, names_to = "scenario", values_to = "amount") %>%
+  mutate(scenario = fct_relevel(scenario, "high_norm", "base_norm", "low_norm"))
+
+glass_sel <- sel_data %>%
+  filter(type == "glass") %>%
+  select(-type, -epa_eq, -low, -high, -base, -unit) %>%
+  pivot_longer(!category, names_to = "scenario", values_to = "amount") %>%
+  filter(scenario != "high_norm") %>%
+  mutate(scenario = fct_relevel(scenario, "low_norm", "base_norm"))
+
+pet_sel <- sel_data %>%
+  filter(type == "PET") %>%
+  select(-type, -epa_eq, -low, -high, -base, -unit) %>%
+  pivot_longer(!category, names_to = "scenario", values_to = "amount") %>%
+  mutate(scenario = fct_relevel(scenario, "high_norm", "base_norm", "low_norm"))
+
+```
+
+```{r}
+# ALUMINUM
+
+ggplot(al_sel, 
+       aes(y= amount,
+           fill = scenario,
+           x = category)) +
+  geom_bar(stat = "identity",
+           position = position_dodge(),
+           show.legend = TRUE) +
+  scale_fill_jco() +
+  # coord_flip() +
+  scale_fill_jco(name = "Recycling Scenarios:",
+  labels = c("High (100% recycling)",
+             "Baseline (50% recycling)",
+             "Low (0% recycling)")) +
+  labs(x = "Environmental Impact Category",
+       y = "Relative to Baseline (EPA)",
+       title = "Aluminum Can",
+       # subtitle = "",
+       caption = "Global Warming Air includes biogenic carbon.\nAll values were normalized to EPA baseline measures.\n\nESM 273: Winter 2021\nKeene Morrow") +
+  theme_minimal() +
+  theme(legend.position = "top",
+        plot.caption = element_text(hjust = 0, face = "italic")) +
+  scale_x_discrete(labels = c("Acidification" = "Acidification",
+                              "Ecotoxicity" = "Ecotoxicity",
+                              "Eutrophication" = "Eutrophication",
+                              "Global Warming Air" = "Global\nWarming\nAir",
+                              "Smog Air" = "Smog Air",
+                              "Human Toxicity (cancer)" = "Human\nToxicity\n(cancer)",
+                              "Human Toxicity (non-cancer)" = "Human\nToxicity\n(non-cancer)")) +
+  theme(
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank())
+
+
+ggsave(here::here("figures", "aluminum.png"), height = 5, width = 8)
+```
+
+```{r}
+# GLASS
+
+ggplot(glass_sel, 
+       aes(y= amount,
+           fill = scenario,
+           x = category)) +
+  geom_bar(stat = "identity",
+           position = position_dodge(),
+           show.legend = TRUE) +
+  scale_fill_jco() +
+  # coord_flip() +
+  scale_fill_jco(name = "Bottle Mass Scenarios:",
+                 labels = c("Low (450g bottle mass)",
+                            "Baseline (570g bottle mass)")) +
+  labs(x = "Environmental Impact Category",
+       y = "Relative to Baseline (EPA)",
+       title = "Glass Bottle",
+       # subtitle = "",
+       caption = "Global Warming Air includes biogenic carbon.\nAll values were normalized to EPA baseline measures.\n\nESM 273: Winter 2021\nKeene Morrow") +
+  theme_minimal() +
+  theme(legend.position = "top",
+        plot.caption = element_text(hjust = 0, face = "italic")) +
+  scale_x_discrete(labels = c("Acidification" = "Acidification",
+                              "Ecotoxicity" = "Ecotoxicity",
+                              "Eutrophication" = "Eutrophication",
+                              "Global Warming Air" = "Global\nWarming\nAir",
+                              "Smog Air" = "Smog Air",
+                              "Human Toxicity (cancer)" = "Human\nToxicity\n(cancer)",
+                              "Human Toxicity (non-cancer)" = "Human\nToxicity\n(non-cancer)")) +
+  theme(
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank())
+
+
+ggsave(here::here("figures", "glass.png"), height = 5, width = 8)
+```
+
+```{r}
+# PET
+
+ggplot(pet_sel, 
+       aes(y= amount,
+           fill = scenario,
+           x = category)) +
+  geom_bar(stat = "identity",
+           position = position_dodge(),
+           show.legend = TRUE) +
+  scale_fill_jco() +
+  # coord_flip() +
+  scale_fill_jco(name = "Recycling Scenarios:",
+                 labels = c("High (90% recycling)",
+                            "Baseline (30% recycling)",
+                            "Low (0% recycling)")) +
+  labs(x = "Environmental Impact Category",
+       y = "Relative to Baseline (EPA)",
+       title = "PET Bottle",
+       # subtitle = "",
+       caption = "Global Warming Air includes biogenic carbon.\nAll values were normalized to EPA baseline measures.\nAll values were normalized to EPA baseline measures.\n\nESM 273: Winter 2021\nKeene Morrow") +
+  theme_minimal() +
+  theme(legend.position = "top",
+        plot.caption = element_text(hjust = 0, face = "italic")) +
+  scale_x_discrete(labels = c("Acidification" = "Acidification",
+                              "Ecotoxicity" = "Ecotoxicity",
+                              "Eutrophication" = "Eutrophication",
+                              "Global Warming Air" = "Global\nWarming\nAir",
+                              "Smog Air" = "Smog Air",
+                              "Human Toxicity (cancer)" = "Human\nToxicity\n(cancer)",
+                              "Human Toxicity (non-cancer)" = "Human\nToxicity\n(non-cancer)")) +
+  theme(
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank())
+
+
+ggsave(here::here("figures", "PET.png"), height = 5, width = 8)
+```
+
+```{r echo=FALSE, error=FALSE, message=FALSE, warning=FALSE, include=TRUE}
+# Contribution: Aluminum
+
+
+al_cont_long <- read_csv("aluminum_contribution.csv") #%>%
+  # select(production_norm, transportation_norm, end_of_life_norm, Category) %>%
+  # pivot_longer(!Category, names_to = "phases", values_to = "amount") %>%
+  # slice(-c(25:93)) 
+
+# rename category variables to simplify
+
+alum_long$Category[alum_long$Category == "TRACI 2.1, Acidification [kg SO2 eq.]"] = "Acidification"
+alum_long$Category[alum_long$Category == "TRACI 2.1, Ecotoxicity (recommended) [CTUe]"] = "Ecotoxicity"
+alum_long$Category[alum_long$Category == "TRACI 2.1, Eutrophication [kg N eq.]"] = "Eutrophication"
+alum_long$Category[alum_long$Category == "TRACI 2.1, Global Warming Air, incl. biogenic carbon [kg CO2 eq.]"] = "Global Warming Air"
+alum_long$Category[alum_long$Category == "TRACI 2.1, Human Health Particulate Air [kg PM2.5 eq.]"] = "Human Health Particulate Air"
+alum_long$Category[alum_long$Category == "TRACI 2.1, Human toxicity, cancer"] = "Human Toxicity, Cancer"
+alum_long$Category[alum_long$Category == "TRACI 2.1, Human toxicity, non-canc. (recommended) [CTUh]"] = "Human Toxicity, No Cancer"
+alum_long$Category[alum_long$Category == "TRACI 2.1, Ozone Depletion Air [kg CFC 11 eq.]"] = "Ozone Depletion Air"
+alum_long$Category[alum_long$Category == "TRACI 2.1, Resources, Fossil fuels [MJ surplus energy]"] = "Resources, Fossil fuels"
+alum_long$Category[alum_long$Category == "TRACI 2.1, Smog Air [kg O3 eq.]"] = "Smog Air"
+
+alum_long_minus <- alum_long %>%
+   filter(Category == "Acidification" | Category == "Ecotoxicity" | Category == "Eutrophication" | Category == "Global Warming Air" | Category == "Smog Air" | Category == "Human Toxicity, Cancer" | Category == "Human Toxicity, No Cancer") 
+
+aluminum_cont_graph <- ggplot(data = alum_long_minus, aes(y= amount,
+                                             fill = phases,
+                                             x = Category)) +
+            geom_bar(stat = "identity", position=position_dodge(), show.legend = TRUE) +
+            theme_minimal() +
+  scale_fill_jco() +
+    labs(x = "Environmental Category",
+       y = "Baseline",
+       title = "Aluminum Can Contribution by Lifecycle Phase") +
+  scale_fill_jco(name = "Phase", labels = c("End of Life", "Production", "Transportation")) +
+   theme(
+    plot.title=element_text( hjust=.5, vjust=0.1, face='bold')
+  ) +
+  coord_flip()
+
+aluminum_cont_graph
+
+```
+
+
+
+
+
+
+
+
+***
+
+### Introduction
+
+
+#### General Aspects
+
+Keene Morrow
+
+18 March 2021
+
+This study has been conducted according to the requirements of ISO 14044:2006(E).
+
+
+
+#### Goal of the Study
+
+This study was conducted as a class exercise for ESM 273: Life Cycle Assessment at the Bren School of Environmental Science & Management, University of California, Santa Barbara.  It is intended for use in that context alone and will not be used to support comparative assertions disclosed to the public.
+
+
+
+### Data and methods
+
+#### Scope of the Study
+
+
+
+
+
+#### LC Inventory Analysis
+
+(detailed explanation of the inventory modeling)
+
+
+
+### Results
+
+#### LC Impact Assessment
+
+(brief explanations of the selected impact indicators)
+
+
+#### LC Interpetation
+
+(results, assumptions, limitation, sensitivity analysis, recommendations, conclusions)
+
+### Discussion and conclusions
+
+
+
+### References
+
+
+

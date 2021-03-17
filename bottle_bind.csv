@@ -1,0 +1,31 @@
+category,baseline,low,high,epa_eq,base_norm,low_norm,high_norm,type
+"TRACI 2.1, Acidification [kg SO2 eq.]",0.0035,0.00277,0,90.8,3.85463e-5,3.05066e-5,0,glass
+"TRACI 2.1, Ecotoxicity (recommended) [CTUe]",0.0208,0.0167,0,11100,1.87387e-6,1.5045e-6,0,glass
+"TRACI 2.1, Eutrophication [kg N eq.]",1.93e-4,1.53e-4,0,21.6,8.93519e-6,7.08333e-6,0,glass
+"TRACI 2.1, Global Warming Air, incl. biogenic carbon [kg CO2 eq.]",0.606,0.482,0,24200,2.50413e-5,1.99174e-5,0,glass
+"TRACI 2.1, Human Health Particulate Air [kg PM2.5 eq.]",1.27e-4,1.01e-4,0,24.2,5.24793e-6,4.17355e-6,0,glass
+"TRACI 2.1, Human toxicity, cancer",3.09e-10,2.45e-10,0,5.07e-5,6.09467e-6,4.83235e-6,0,glass
+"TRACI 2.1, Human toxicity, non-canc. (recommended) [CTUh]",3.25e-8,2.57e-8,0,0.00105,3.09524e-5,2.44762e-5,0,glass
+"TRACI 2.1, Ozone Depletion Air [kg CFC 11 eq.]",2.12e-15,1.68e-15,0,0.161,1.31677e-14,1.04348e-14,0,glass
+"TRACI 2.1, Resources, Fossil fuels [MJ surplus energy]",1.09,0.858,0,17300,6.30058e-5,4.95954e-5,0,glass
+"TRACI 2.1, Smog Air [kg O3 eq.]",0.0545,0.0432,0,1390,3.92086e-5,3.10791e-5,0,glass
+"TRACI 2.1, Acidification [kg SO2 eq.]",3.69e-4,4.43e-4,2.21e-4,90.8,4.06388e-6,4.87885e-6,2.43392e-6,PET
+"TRACI 2.1, Ecotoxicity (recommended) [CTUe]",0.0661,0.0888,0.0209,11100,5.95495e-6,8e-6,1.88288e-6,PET
+"TRACI 2.1, Eutrophication [kg N eq.]",5.34e-5,4.71e-5,6.61e-5,21.6,2.47222e-6,2.18056e-6,3.06019e-6,PET
+"TRACI 2.1, Global Warming Air, incl. biogenic carbon [kg CO2 eq.]",0.123,0.139,0.0924,24200,5.08264e-6,5.7438e-6,3.81818e-6,PET
+"TRACI 2.1, Human Health Particulate Air [kg PM2.5 eq.]",1.86e-5,2.23e-5,1.13e-5,24.2,7.68595e-7,9.21e-7,4.67e-7,PET
+"TRACI 2.1, Human toxicity, cancer",1.8e-10,2.37e-10,6.65e-11,5.07e-5,3.55e-6,4.67456e-6,1.31164e-6,PET
+"TRACI 2.1, Human toxicity, non-canc. (recommended) [CTUh]",6.54e-9,8.25e-9,3.13e-9,0.00105,6.23e-6,7.85714e-6,2.98095e-6,PET
+"TRACI 2.1, Ozone Depletion Air [kg CFC 11 eq.]",4.34e-7,5.89e-7,1.25e-7,0.161,2.7e-6,3.66e-6,7.76e-7,PET
+"TRACI 2.1, Resources, Fossil fuels [MJ surplus energy]",0.355,0.434,0.197,17300,2.05202e-5,2.51e-5,1.14e-5,PET
+"TRACI 2.1, Smog Air [kg O3 eq.]",0.00558,0.00661,0.00352,1390,4.01439e-6,4.76e-6,2.53e-6,PET
+"TRACI 2.1, Acidification [kg SO2 eq.]",0.00112,0.00184,3.9e-4,90.8,1.23348e-5,2.02643e-5,4.29515e-6,aluminum
+"TRACI 2.1, Ecotoxicity (recommended) [CTUe]",0.0059,0.00907,0.00273,11100,5.31532e-7,8.17117e-7,2.45946e-7,aluminum
+"TRACI 2.1, Eutrophication [kg N eq.]",3.73e-5,5.52e-5,1.95e-5,21.6,1.72685e-6,2.55556e-6,9.02778e-7,aluminum
+"TRACI 2.1, Global Warming Air, incl. biogenic carbon [kg CO2 eq.]",0.255,0.405,0.106,24200,1.05372e-5,1.67355e-5,4.38017e-6,aluminum
+"TRACI 2.1, Human Health Particulate Air [kg PM2.5 eq.]",9.75e-5,1.68e-4,2.71e-5,24.2,4.02893e-6,6.94215e-6,1.12e-6,aluminum
+"TRACI 2.1, Human toxicity, cancer",1.02e-10,1.69e-10,3.52e-11,5.07e-5,2.01183e-6,3.33333e-6,6.9428e-7,aluminum
+"TRACI 2.1, Human toxicity, non-canc. (recommended) [CTUh]",9.04e-9,1.55e-8,2.56e-9,0.00105,8.60952e-6,1.47619e-5,2.4381e-6,aluminum
+"TRACI 2.1, Ozone Depletion Air [kg CFC 11 eq.]",3.59e-12,5.81e-12,1.37e-12,0.161,2.22981e-11,3.6087e-11,8.51e-12,aluminum
+"TRACI 2.1, Resources, Fossil fuels [MJ surplus energy]",0.296,0.439,0.154,17300,1.71098e-5,2.53757e-5,8.9e-6,aluminum
+"TRACI 2.1, Smog Air [kg O3 eq.]",0.0142,0.0219,0.00643,1390,1.02158e-5,1.57554e-5,4.63e-6,aluminum

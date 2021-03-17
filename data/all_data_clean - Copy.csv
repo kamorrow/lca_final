@@ -1,0 +1,34 @@
+category,unit,base,low,high,epa_eq,base_norm,low_norm,high_norm,type
+Acidification,kg SO2 eq. ,0.0035,0.00277,0,90.8,3.85E-05,3.05E-05,0,glass
+Ecotoxicity,CTUe ,0.0208,0.0167,0,11100,1.87E-06,1.50E-06,0,glass
+Eutrophication,kg N eq. ,1.93E-04,1.53E-04,0,21.6,8.94E-06,7.08E-06,0,glass
+Global Warming Air incl. biogenic carbon,kg CO2 eq.,0.606,0.482,0,24200,2.50E-05,1.99E-05,0,glass
+Human Health Particulate Air,kg PM2.5 eq. ,1.27E-04,1.01E-04,0,24.2,5.25E-06,4.17E-06,0,glass
+"Human toxicity, cancer",,3.09E-10,2.45E-10,0,5.07E-05,6.09E-06,4.83E-06,0,glass
+"Human toxicity, non-cancer",CTUh,3.25E-08,2.57E-08,0,0.00105,3.10E-05,2.45E-05,0,glass
+"Human toxicity, total",,3.28E-08,2.59E-08,0.00E+00,1.10E-03,3.71E-05,2.93E-05,0.00E+00,glass
+Ozone Depletion Air,kg CFC 11 eq. ,2.12E-15,1.68E-15,0,0.161,1.32E-14,1.04E-14,0,glass
+Resources Fossil fuels,MJ surplus energy,1.09,0.858,0,17300,6.30E-05,4.96E-05,0,glass
+Smog Air,kg O3 eq. ,0.0545,0.0432,0,1390,3.92E-05,3.11E-05,0,glass
+Acidification,kg SO2 eq. ,3.69E-04,4.43E-04,2.21E-04,90.8,4.06E-06,4.88E-06,2.43E-06,PET
+Ecotoxicity,CTUe ,0.0661,0.0888,0.0209,11100,5.95E-06,8.00E-06,1.88E-06,PET
+Eutrophication,kg N eq. ,5.34E-05,4.71E-05,6.61E-05,21.6,2.47E-06,2.18E-06,3.06E-06,PET
+Global Warming Air incl. biogenic carbon,kg CO2 eq.,0.123,0.139,0.0924,24200,5.08E-06,5.74E-06,3.82E-06,PET
+Human Health Particulate Air,kg PM2.5 eq. ,1.86E-05,2.23E-05,1.13E-05,24.2,7.69E-07,9.21E-07,4.67E-07,PET
+"Human toxicity, cancer",,1.80E-10,2.37E-10,6.65E-11,5.07E-05,3.55E-06,4.67E-06,1.31E-06,PET
+"Human toxicity, non-cancer",CTUh,6.54E-09,8.25E-09,3.13E-09,0.00105,6.23E-06,7.86E-06,2.98E-06,PET
+"Human toxicity, total",,6.72E-09,8.49E-09,3.20E-09,1.10E-03,9.78E-06,1.25E-05,0.00E+00,PET
+Ozone Depletion Air,kg CFC 11 eq. ,4.34E-07,5.89E-07,1.25E-07,0.161,2.70E-06,3.66E-06,7.76E-07,PET
+Resources Fossil fuels,MJ surplus energy,0.355,0.434,0.197,17300,2.05E-05,2.51E-05,1.14E-05,PET
+Smog Air,kg O3 eq. ,0.00558,0.00661,0.00352,1390,4.01E-06,4.76E-06,2.53E-06,PET
+Acidification,kg SO2 eq. ,0.00112,0.00184,3.90E-04,90.8,1.23E-05,2.03E-05,4.30E-06,aluminum
+Ecotoxicity,CTUe ,0.0059,0.00907,0.00273,11100,5.32E-07,8.17E-07,2.46E-07,aluminum
+Eutrophication,kg N eq. ,3.73E-05,5.52E-05,1.95E-05,21.6,1.73E-06,2.56E-06,9.03E-07,aluminum
+Global Warming Air incl. biogenic carbon,kg CO2 eq.,0.255,0.405,0.106,24200,1.05E-05,1.67E-05,4.38E-06,aluminum
+Human Health Particulate Air,kg PM2.5 eq. ,9.75E-05,1.68E-04,2.71E-05,24.2,4.03E-06,6.94E-06,1.12E-06,aluminum
+"Human toxicity, cancer",,1.02E-10,1.69E-10,3.52E-11,5.07E-05,2.01E-06,3.33E-06,6.94E-07,aluminum
+"Human toxicity, non-cancer",CTUh,9.04E-09,1.55E-08,2.56E-09,0.00105,8.61E-06,1.48E-05,2.44E-06,aluminum
+"Human toxicity, total",,9.14E-09,1.57E-08,2.60E-09,1.10E-03,1.06E-05,1.81E-05,0.00E+00,aluminum
+Ozone Depletion Air,kg CFC 11 eq. ,3.59E-12,5.81E-12,1.37E-12,0.161,2.23E-11,3.61E-11,8.51E-12,aluminum
+Resources Fossil fuels,MJ surplus energy,0.296,0.439,0.154,17300,1.71E-05,2.54E-05,8.90E-06,aluminum
+Smog Air,kg O3 eq. ,0.0142,0.0219,0.00643,1390,1.02E-05,1.58E-05,4.63E-06,aluminum

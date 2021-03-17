@@ -1,0 +1,16 @@
+﻿category,type,Container Filling <u-so>,Container use <u-so>,DE: Plastic injection moulding part (unspecific) ts <u-so>,Displaced production <u-so>,EU-28: Plastic waste on landfill ts,EU-28: Tap water from groundwater ts,GLO: Compressed air 7 bar (medium power consumption) ts <u-so>,"GLO: Truck, Euro 4, 20 - 26t gross weight / 17.3t payload capacity ts <u-so>","GLO: Truck, Euro 4, 20 - 26t gross weight / 17.3t payload capacity ts <u-so>","GLO: Truck, Euro 4, 28 - 32t gross weight / 22t payload capacity ts <u-so>","GLO: Truck, Euro 4, 28 - 32t gross weight / 22t payload capacity ts <u-so>",PET blow molding <u-so>,"RER: Polyethylene terephthalate, granulate, bottle grade, at plant PlasticsEurope","RER: Polyethylene terephthalate, granulate, bottle grade, at plant PlasticsEurope",RER: Polypropylene granulate (PP) ELCD/PlasticsEurope <p-agg>,US: Diesel mix at refinery ts,US: Electricity grid mix ts,production_total,transportation_total,end_of_life,total,epa_eq,production_norm,transportation_norm,end_of_life_norm
+"TRACI 2.1, Ecotoxicity (recommended) [CTUe]",PET,0,0,0,0,0.000278989,1.54E-07,0,6.51E-11,2.54E-11,2.48E-10,2.48E-11,0,0.086746747,-0.022780858,2.57E-05,0.000956485,0.000742486,8.75E-02,9.56E-04,-2.28E-02,6.57E-02,11100,7.88E-06,8.62E-08,-2.05002E-06
+"TRACI 2.1, Eutrophication [kg N eq.]",PET,0,0,0,0,2.89E-06,3.51E-10,0,4.28E-07,1.63E-07,1.41E-06,1.41E-07,0,3.26E-05,-8.56E-06,3.65E-06,1.31E-06,3.82E-06,4.01E-05,3.45E-06,-4.91E-06,3.86E-05,21.6,1.85E-06,1.60E-07,-2.2731E-07
+"TRACI 2.1, Global Warming Air, incl. biogenic carbon [kg CO2 eq.]",PET,0,0,0,0,2.19E-03,1.61E-07,0,1.21E-03,4.54E-04,4.16E-03,4.16E-04,0,8.80E-02,-2.31E-02,8.02E-03,7.79E-04,3.32E-02,1.29E-01,7.01E-03,-1.51E-02,1.21E-01,24200,5.34E-06,2.90E-07,-6.23428E-07
+"TRACI 2.1, Human toxicity, cancer ",PET,0,0,0,0,6.90E-12,2.80E-15,0,3.02E-16,1.18E-16,1.15E-15,1.15E-16,0,2.16E-10,-5.68E-11,5.26E-14,4.32E-12,7.62E-12,2.24E-10,4.33E-12,-5.67E-11,1.72E-10,5.07E-05,4.42E-06,8.53E-08,-1.11912E-06
+"TRACI 2.1, Human toxicity, non-canc. (recommended) [CTUh]",PET,0,0,0,0,1.07E-09,1.31E-13,0,7.65E-17,2.98E-17,2.92E-16,2.92E-17,0,5.85E-09,-1.54E-09,7.07E-12,3.42E-10,6.51E-10,6.51E-09,3.42E-10,-1.53E-09,5.32E-09,0.00105,6.20E-06,3.26E-07,-1.45727E-06
+"TRACI 2.1, Ozone Depletion Air [kg CFC 11 eq.]",PET,0,0,0,0,7.25E-18,1.38E-21,0,0.00E+00,0.00E+00,0.00E+00,0.00E+00,0,5.89E-07,-1.55E-07,0.00E+00,7.55E-19,1.60E-16,5.89E-07,7.55E-19,-1.55E-07,4.34E-07,0.161,3.66E-06,4.69E-18,-9.61122E-07
+"TRACI 2.1, Smog Air [kg O3 eq.]",PET,0,0,0,0,1.03E-04,5.02E-09,0,1.56E-04,5.94E-05,5.14E-04,5.14E-05,0,4.75E-03,-1.25E-03,2.31E-04,5.94E-05,7.18E-04,5.70E-03,8.40E-04,-1.02E-03,5.52E-03,1390,4.10E-06,6.05E-07,-7.31277E-07
+"TRACI 2.1, Acidification [kg SO2 eq.]",PET,0,0,0,0,6.29E-06,3.35E-10,0,6.70E-06,2.55E-06,2.21E-05,2.21E-06,0,0.00032562,-8.55E-05,2.50E-05,3.15E-06,5.05E-05,4.01E-04,3.67E-05,-6.05E-05,3.77E-04,90.8,4.42E-06,4.04E-07,-6.65913E-07
+,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,

@@ -1,0 +1,12 @@
+﻿,Low,Medium,High,epa_eq,base_norm,low_norm,high_norm
+"TRACI 2.1, Acidification [kg SO2 eq.]",0.000443,0.000369,0.000221,90.8,4.06388E-06,4.87885E-06,2.43392E-06
+"TRACI 2.1, Ecotoxicity (recommended) [CTUe]",0.0888,0.0661,0.0209,11100,5.95495E-06,0.000008,1.88288E-06
+"TRACI 2.1, Eutrophication [kg N eq.]",4.71E-05,5.34E-05,6.61E-05,21.6,2.47222E-06,2.18056E-06,3.06019E-06
+"TRACI 2.1, Global Warming Air, incl. biogenic carbon [kg CO2 eq.]",0.139,0.123,0.0924,24200,5.08264E-06,5.7438E-06,3.81818E-06
+"TRACI 2.1, Human Health Particulate Air [kg PM2.5 eq.]",2.23E-05,1.86E-05,1.13E-05,2.42E+01,7.68595E-07,9.21E-07,4.67E-07
+"TRACI 2.1, Human toxicity, cancer ",2.37E-10,1.80E-10,6.65E-11,5.07E-05,3.55E-06,4.67456E-06,1.31164E-06
+"TRACI 2.1, Human toxicity, non-canc. (recommended) [CTUh]",8.25E-09,6.54E-09,3.13E-09,0.00105,6.23E-06,7.85714E-06,2.98095E-06
+"TRACI 2.1, Ozone Depletion Air [kg CFC 11 eq.]",5.89E-07,4.34E-07,1.25E-07,0.161,2.70E-06,3.66E-06,7.76E-07
+"TRACI 2.1, Resources, Fossil fuels [MJ surplus energy]",0.434,0.355,0.197,17300,2.05202E-05,2.51E-05,1.14E-05
+"TRACI 2.1, Smog Air [kg O3 eq.]",0.00661,0.00558,0.00352,1390,4.01439E-06,4.76E-06,2.53E-06
+,,,,,,,
