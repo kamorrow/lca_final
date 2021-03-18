@@ -1,32 +1,9 @@
-﻿Category,bottle_type,Container Filling <u-so>,Container use <u-so>,DE: Aluminium sheet deep drawing ts <u-so>,Displaced production <u-so>,EU-28: Ferro metals on landfill ts,EU28+EFTA: Aluminium refining: casting alloy ingot from scrap (2010) European Aluminium <p-agg>,EU28+EFTA: Primary aluminium ingot consumption mix (2015) European Aluminium,EU28+EFTA: Primary aluminium ingot consumption mix (2015) European Aluminium,EU28+EFTA+Turkey: Aluminium sheet (2015) European Aluminium <p-agg>,"GLO: Truck, Euro 4, 20 - 26t gross weight / 17.3t payload capacity ts <u-so>","GLO: Truck, Euro 4, 20 - 26t gross weight / 17.3t payload capacity ts <u-so>","GLO: Truck, Euro 4, 28 - 32t gross weight / 22t payload capacity ts <u-so>",US: Diesel mix at refinery ts,US: Electricity grid mix ts,production_total,transportation_total,end_of_life,total,epa_eq,production_norm,transportation_norm,end_of_life_norm
-"TRACI 2.1, Ecotoxicity (recommended) [CTUe]",aluminum,0,0,0,0,3.56E-05,0.000222793,0.011565907,-0.007349877,0.00039033,5.77E-11,3.74E-11,2.42E-10,0.000888991,0.000148,1.21E-02,8.89E-04,-0.007127084,5.90E-03,11100,1.09E-06,8.01E-08,-6.4208E-07
-"TRACI 2.1, Eutrophication [kg N eq.]",aluminum,0,0,0,0,1.14E-07,3.73E-06,6.85E-05,-4.35E-05,4.57E-06,3.80E-07,2.41E-07,1.38E-06,1.22E-06,7.62E-07,7.39E-05,3.21E-06,-3.97779E-05,3.73E-05,21.6,3.42E-06,1.49E-07,-1.84157E-06
-"TRACI 2.1, Global Warming Air, incl. biogenic carbon [kg CO2 eq.]",aluminum,0,0,0,0,0.000879769,0.017236198,0.544085885,-0.345754511,0.025916078,0.001070078,0.000670476,0.004051612,0.000723663,0.0066183,5.78E-01,6.52E-03,-0.328518313,2.55E-01,24200,2.39E-05,2.69E-07,-1.35751E-05
-"TRACI 2.1, Human toxicity, cancer ",aluminum,0,0,0,0,2.59E-12,3.35E-12,2.30E-10,-1.46E-10,6.93E-12,2.68E-16,1.74E-16,1.12E-15,4.02E-12,1.52E-12,2.41E-10,4.02E-12,-1.42933E-10,1.02E-10,5.07E-05,4.76E-06,7.93E-08,-2.8192E-06
-"TRACI 2.1, Human toxicity, non-canc. (recommended) [CTUh]",aluminum,0,0,0,0,2.99E-10,1.78E-10,2.18E-08,-1.39E-08,1.67E-10,6.78E-17,4.40E-17,2.84E-16,3.18E-10,1.30E-10,2.24E-08,3.18E-10,-1.36779E-08,9.04E-09,0.00105,2.13E-05,3.03E-07,-1.30265E-05
-"TRACI 2.1, Ozone Depletion Air [kg CFC 11 eq.]",aluminum,0,0,0,0,2.85E-18,1.55E-13,7.93E-12,-5.04E-12,5.39E-13,0,0,0,7.02E-19,3.19E-17,8.47E-12,7.02E-19,-4.88715E-12,3.59E-12,0.161,5.26E-11,4.36E-18,-3.0355E-11
-"TRACI 2.1, Smog Air [kg O3 eq.]",aluminum,0,0,0,0.00E+00,4.78E-05,0.001387239,0.029197157,-1.86E-02,1.19E-03,1.38E-04,8.78E-05,5.01E-04,5.52E-05,0.000143197,3.06E-02,7.83E-04,-0.017166906,1.42E-02,1390,2.20E-05,5.63E-07,-1.23503E-05
-"TRACI 2.1, Acidification [kg SO2 eq.]",aluminum,0,0,0,0.00E+00,2.65E-06,5.86E-05,2.61E-03,-1.66E-03,5.92E-05,5.94E-06,3.77E-06,2.15E-05,2.93E-06,1.01E-05,2.68E-03,3.42E-05,-0.001600108,1.12E-03,90.8,2.95E-05,3.76E-07,-1.76223E-05
-,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,
+Category,bottle_type,Container Filling <u-so>,Container use <u-so>,DE: Aluminium sheet deep drawing ts <u-so>,Displaced production <u-so>,EU-28: Ferro metals on landfill ts,EU28+EFTA: Aluminium refining: casting alloy ingot from scrap (2010) European Aluminium <p-agg>,EU28+EFTA: Primary aluminium ingot consumption mix (2015) European Aluminium,EU28+EFTA: Primary aluminium ingot consumption mix (2015) European Aluminium,EU28+EFTA+Turkey: Aluminium sheet (2015) European Aluminium <p-agg>,"GLO: Truck, Euro 4, 20 - 26t gross weight / 17.3t payload capacity ts <u-so>","GLO: Truck, Euro 4, 20 - 26t gross weight / 17.3t payload capacity ts <u-so>","GLO: Truck, Euro 4, 28 - 32t gross weight / 22t payload capacity ts <u-so>",US: Diesel mix at refinery ts,US: Electricity grid mix ts,production_total,transportation_total,end_of_life,total,epa_eq,production_norm,transportation_norm,end_of_life_norm
+ Ecotoxicity,aluminum,0,0,0,0,3.56E-05,0.000222793,0.011565907,-0.007349877,0.00039033,5.77E-11,3.74E-11,2.42E-10,0.000888991,0.000148,1.21E-02,8.89E-04,-0.007127084,5.90E-03,11100,1.09E-06,8.01E-08,-6.42E-07
+ Eutrophication,aluminum,0,0,0,0,1.14E-07,3.73E-06,6.85E-05,-4.35E-05,4.57E-06,3.80E-07,2.41E-07,1.38E-06,1.22E-06,7.62E-07,7.39E-05,3.21E-06,-3.98E-05,3.73E-05,21.6,3.42E-06,1.49E-07,-1.84E-06
+ Global Warming Air,aluminum,0,0,0,0,0.000879769,0.017236198,0.544085885,-0.345754511,0.025916078,0.001070078,0.000670476,0.004051612,0.000723663,0.0066183,5.78E-01,6.52E-03,-0.328518313,2.55E-01,24200,2.39E-05,2.69E-07,-1.36E-05
+ Human Toxicity (cancer),aluminum,0,0,0,0,2.59E-12,3.35E-12,2.30E-10,-1.46E-10,6.93E-12,2.68E-16,1.74E-16,1.12E-15,4.02E-12,1.52E-12,2.41E-10,4.02E-12,-1.43E-10,1.02E-10,5.07E-05,4.76E-06,7.93E-08,-2.82E-06
+ Human Toxicity (non-cancer),aluminum,0,0,0,0,2.99E-10,1.78E-10,2.18E-08,-1.39E-08,1.67E-10,6.78E-17,4.40E-17,2.84E-16,3.18E-10,1.30E-10,2.24E-08,3.18E-10,-1.37E-08,9.04E-09,0.00105,2.13E-05,3.03E-07,-1.30E-05
+ Ozone Depletion Air,aluminum,0,0,0,0,2.85E-18,1.55E-13,7.93E-12,-5.04E-12,5.39E-13,0,0,0,7.02E-19,3.19E-17,8.47E-12,7.02E-19,-4.89E-12,3.59E-12,0.161,5.26E-11,4.36E-18,-3.04E-11
+ Smog Air,aluminum,0,0,0,0.00E+00,4.78E-05,0.001387239,0.029197157,-1.86E-02,1.19E-03,1.38E-04,8.78E-05,5.01E-04,5.52E-05,0.000143197,3.06E-02,7.83E-04,-0.017166906,1.42E-02,1390,2.20E-05,5.63E-07,-1.24E-05
+ Acidification,aluminum,0,0,0,0.00E+00,2.65E-06,5.86E-05,2.61E-03,-1.66E-03,5.92E-05,5.94E-06,3.77E-06,2.15E-05,2.93E-06,1.01E-05,2.68E-03,3.42E-05,-0.001600108,1.12E-03,90.8,2.95E-05,3.76E-07,-1.76E-05

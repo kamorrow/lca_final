@@ -19,21 +19,21 @@ library("here")
 ```{r echo=FALSE, error=FALSE, message=FALSE, warning=FALSE, include=FALSE}
 # Read in and clean data
 
-aluminum_clean <- read_csv("aluminum_final.csv") %>%
+aluminum_clean <- read_csv(here::here("data", "aluminum_final.csv")) %>%
   clean_names() %>%
   rename("category" = "x1") %>%
   rename("base" = "medium") %>%
   mutate(type = "aluminum") %>%
   drop_na()
 
-pet_clean <- read_csv("pet_final.csv") %>%
+pet_clean <- read_csv(here::here("data", "pet_final.csv")) %>%
   clean_names() %>%
   rename("category" = "x1") %>%
   mutate(type = "PET") %>%
   rename("base" = "medium") %>%
   drop_na() 
 
-glass_clean <- read_csv("glass_final.csv") %>%
+glass_clean <- read_csv(here::here("data", "glass_final.csv")) %>%
   clean_names() %>%
   rename("category" = "x1") %>%
   rename("base" = "medium") %>%
@@ -52,7 +52,7 @@ all_data <- rbind(glass_clean, pet_clean, aluminum_clean)
 ```{r echo=FALSE, error=FALSE, message=FALSE, warning=FALSE, include=FALSE}
 # Clean up in excel and read back in
 
-all_data_clean <- read_csv("all_data_clean.csv")
+all_data_clean <- read_csv(here::here("data", "all_data_clean.csv"))
 
 # Retrieve categories of interest
 
@@ -80,28 +80,33 @@ pet_sel <- sel_data %>%
   pivot_longer(!category, names_to = "scenario", values_to = "amount") %>%
   mutate(scenario = fct_relevel(scenario, "high_norm", "base_norm", "low_norm"))
 
+all_sel <- sel_data %>%
+  select(-epa_eq, -low, -high, -base, -low_norm, -high_norm, -unit)# %>%
+  # pivot_longer(!category, !type, names_to = "scenario", values_to = "amount") %>%
+  # mutate(scenario = fct_relevel(scenario, "high_norm", "base_norm", "low_norm"))
+
 ```
 
 ```{r}
-# ALUMINUM
+# All containers
 
-ggplot(al_sel, 
-       aes(y= amount,
-           fill = scenario,
+ggplot(all_sel, 
+       aes(y= base_norm,
+           fill = type,
            x = category)) +
   geom_bar(stat = "identity",
            position = position_dodge(),
            show.legend = TRUE) +
-  scale_fill_jco() +
+  scale_fill_futurama() +
   # coord_flip() +
-  scale_fill_jco(name = "Recycling Scenarios:",
-  labels = c("High (100% recycling)",
-             "Baseline (50% recycling)",
-             "Low (0% recycling)")) +
+  scale_fill_futurama(name = "Container Type:",
+                      labels = c("Aluminum",
+                                 "Glass",
+                                 "PET")) +
   labs(x = "Environmental Impact Category",
        y = "Relative to Baseline (EPA)",
-       title = "Aluminum Can",
-       # subtitle = "",
+       title = "Environmental Impact",
+       subtitle = "Reference Flow: All Container Types",
        caption = "Global Warming Air includes biogenic carbon.\nAll values were normalized to EPA baseline measures.\n\nESM 273: Winter 2021\nKeene Morrow") +
   theme_minimal() +
   theme(legend.position = "top",
@@ -118,7 +123,49 @@ ggplot(al_sel,
     panel.grid.minor.x = element_blank())
 
 
-ggsave(here::here("figures", "aluminum.png"), height = 5, width = 8)
+ggsave(here::here("figures", "all_impact_f2.png"), height = 6, width = 8)
+
+```
+
+
+
+```{r}
+# ALUMINUM
+
+ggplot(al_sel, 
+       aes(y= amount,
+           fill = scenario,
+           x = category)) +
+  geom_bar(stat = "identity",
+           position = position_dodge(),
+           show.legend = TRUE) +
+  scale_fill_futurama() +
+  # coord_flip() +
+  scale_fill_futurama(name = "Recycling Scenarios:",
+  labels = c("High (100% recycling)",
+             "Baseline (50% recycling)",
+             "Low (0% recycling)")) +
+  labs(x = "Environmental Impact Category",
+       y = "Relative to Baseline (EPA)",
+       title = "Environmental Impact",
+       subtitle = "Aluminum Can",
+       caption = "Global Warming Air includes biogenic carbon.\nAll values were normalized to EPA baseline measures.\n\nESM 273: Winter 2021\nKeene Morrow") +
+  theme_minimal() +
+  theme(legend.position = "top",
+        plot.caption = element_text(hjust = 0, face = "italic")) +
+  scale_x_discrete(labels = c("Acidification" = "Acidification",
+                              "Ecotoxicity" = "Ecotoxicity",
+                              "Eutrophication" = "Eutrophication",
+                              "Global Warming Air" = "Global\nWarming\nAir",
+                              "Smog Air" = "Smog Air",
+                              "Human Toxicity (cancer)" = "Human\nToxicity\n(cancer)",
+                              "Human Toxicity (non-cancer)" = "Human\nToxicity\n(non-cancer)")) +
+  theme(
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank())
+
+
+ggsave(here::here("figures", "aluminum_f2.png"), height = 6, width = 8)
 ```
 
 ```{r}
@@ -131,15 +178,15 @@ ggplot(glass_sel,
   geom_bar(stat = "identity",
            position = position_dodge(),
            show.legend = TRUE) +
-  scale_fill_jco() +
+  scale_fill_futurama() +
   # coord_flip() +
-  scale_fill_jco(name = "Bottle Mass Scenarios:",
+  scale_fill_futurama(name = "Bottle Mass Scenarios:",
                  labels = c("Low (450g bottle mass)",
                             "Baseline (570g bottle mass)")) +
   labs(x = "Environmental Impact Category",
        y = "Relative to Baseline (EPA)",
-       title = "Glass Bottle",
-       # subtitle = "",
+       title = "Environmental Impact",
+       subtitle = "Glass Bottle",
        caption = "Global Warming Air includes biogenic carbon.\nAll values were normalized to EPA baseline measures.\n\nESM 273: Winter 2021\nKeene Morrow") +
   theme_minimal() +
   theme(legend.position = "top",
@@ -156,7 +203,7 @@ ggplot(glass_sel,
     panel.grid.minor.x = element_blank())
 
 
-ggsave(here::here("figures", "glass.png"), height = 5, width = 8)
+ggsave(here::here("figures", "glass_f2.png"), height = 6, width = 8)
 ```
 
 ```{r}
@@ -169,17 +216,17 @@ ggplot(pet_sel,
   geom_bar(stat = "identity",
            position = position_dodge(),
            show.legend = TRUE) +
-  scale_fill_jco() +
+  scale_fill_futurama() +
   # coord_flip() +
-  scale_fill_jco(name = "Recycling Scenarios:",
+  scale_fill_futurama(name = "Recycling Scenarios:",
                  labels = c("High (90% recycling)",
                             "Baseline (30% recycling)",
                             "Low (0% recycling)")) +
   labs(x = "Environmental Impact Category",
        y = "Relative to Baseline (EPA)",
-       title = "PET Bottle",
-       # subtitle = "",
-       caption = "Global Warming Air includes biogenic carbon.\nAll values were normalized to EPA baseline measures.\nAll values were normalized to EPA baseline measures.\n\nESM 273: Winter 2021\nKeene Morrow") +
+       title = "Environmental Impact",
+       subtitle = "PET Bottle",
+       caption = "Global Warming Air includes biogenic carbon.\nAll values were normalized to EPA baseline measures.\n\nESM 273: Winter 2021\nKeene Morrow") +
   theme_minimal() +
   theme(legend.position = "top",
         plot.caption = element_text(hjust = 0, face = "italic")) +
@@ -195,56 +242,164 @@ ggplot(pet_sel,
     panel.grid.minor.x = element_blank())
 
 
-ggsave(here::here("figures", "PET.png"), height = 5, width = 8)
+ggsave(here::here("figures", "PET_f2.png"), height = 6, width = 8)
 ```
 
 ```{r echo=FALSE, error=FALSE, message=FALSE, warning=FALSE, include=TRUE}
 # Contribution: Aluminum
 
 
-al_cont_long <- read_csv("aluminum_contribution.csv") #%>%
-  # select(production_norm, transportation_norm, end_of_life_norm, Category) %>%
-  # pivot_longer(!Category, names_to = "phases", values_to = "amount") %>%
-  # slice(-c(25:93)) 
+al_cont_long <- read_csv(here::here("data", "aluminum_contribution.csv")) %>%
+  select(production_norm, transportation_norm, end_of_life_norm, Category) %>%
+  pivot_longer(!Category, names_to = "phases", values_to = "amount")
 
-# rename category variables to simplify
+sel_al_cont_long <-  al_cont_long %>% 
+  filter(Category %in% c("Acidification",
+                         "Ecotoxicity",
+                         "Eutrophication",
+                         "Global Warming Air",
+                         "Smog Air",
+                         "Human Toxicity (cancer)",
+                         "Human Toxicity (non-cancer)")) %>%
+  mutate(phases = fct_relevel(phases, "production_norm", "transportation_norm
+", "end_of_life_norm"))
 
-alum_long$Category[alum_long$Category == "TRACI 2.1, Acidification [kg SO2 eq.]"] = "Acidification"
-alum_long$Category[alum_long$Category == "TRACI 2.1, Ecotoxicity (recommended) [CTUe]"] = "Ecotoxicity"
-alum_long$Category[alum_long$Category == "TRACI 2.1, Eutrophication [kg N eq.]"] = "Eutrophication"
-alum_long$Category[alum_long$Category == "TRACI 2.1, Global Warming Air, incl. biogenic carbon [kg CO2 eq.]"] = "Global Warming Air"
-alum_long$Category[alum_long$Category == "TRACI 2.1, Human Health Particulate Air [kg PM2.5 eq.]"] = "Human Health Particulate Air"
-alum_long$Category[alum_long$Category == "TRACI 2.1, Human toxicity, cancer"] = "Human Toxicity, Cancer"
-alum_long$Category[alum_long$Category == "TRACI 2.1, Human toxicity, non-canc. (recommended) [CTUh]"] = "Human Toxicity, No Cancer"
-alum_long$Category[alum_long$Category == "TRACI 2.1, Ozone Depletion Air [kg CFC 11 eq.]"] = "Ozone Depletion Air"
-alum_long$Category[alum_long$Category == "TRACI 2.1, Resources, Fossil fuels [MJ surplus energy]"] = "Resources, Fossil fuels"
-alum_long$Category[alum_long$Category == "TRACI 2.1, Smog Air [kg O3 eq.]"] = "Smog Air"
+ggplot(data = sel_al_cont_long,
+       aes(y= amount,
+           fill = phases,
+           x = Category)) +
+            geom_bar(stat = "identity",
+                     position = position_dodge(),
+                     show.legend = TRUE) +
+  scale_fill_futurama() +
+  labs(x = "Environmental Impact Category",
+       y = "Relative to Baseline (EPA)",
+       title = "Contribution to Lifecycle Phase",
+       subtitle = "Aluminum Can",
+       caption = "Global Warming Air includes biogenic carbon.\nAll values were normalized to EPA baseline measures.\n\nESM 273: Winter 2021\nKeene Morrow") +
+  scale_fill_futurama(name = "Phase", labels = c("Production", "End of Life", "Transportation")) +
+  scale_x_discrete(labels = c("Acidification" = "Acidification",
+                              "Ecotoxicity" = "Ecotoxicity",
+                              "Eutrophication" = "Eutrophication",
+                              "Global Warming Air" = "Global\nWarming\nAir",
+                              "Smog Air" = "Smog Air",
+                              "Human Toxicity (cancer)" = "Human\nToxicity\n(cancer)",
+                              "Human Toxicity (non-cancer)" = "Human\nToxicity\n(non-cancer)")) +
+  theme_minimal() +
+  theme(legend.position = "top",
+        plot.caption = element_text(hjust = 0, face = "italic")) +
+  # coord_flip() +
+    theme(
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank())
 
-alum_long_minus <- alum_long %>%
-   filter(Category == "Acidification" | Category == "Ecotoxicity" | Category == "Eutrophication" | Category == "Global Warming Air" | Category == "Smog Air" | Category == "Human Toxicity, Cancer" | Category == "Human Toxicity, No Cancer") 
-
-aluminum_cont_graph <- ggplot(data = alum_long_minus, aes(y= amount,
-                                             fill = phases,
-                                             x = Category)) +
-            geom_bar(stat = "identity", position=position_dodge(), show.legend = TRUE) +
-            theme_minimal() +
-  scale_fill_jco() +
-    labs(x = "Environmental Category",
-       y = "Baseline",
-       title = "Aluminum Can Contribution by Lifecycle Phase") +
-  scale_fill_jco(name = "Phase", labels = c("End of Life", "Production", "Transportation")) +
-   theme(
-    plot.title=element_text( hjust=.5, vjust=0.1, face='bold')
-  ) +
-  coord_flip()
-
-aluminum_cont_graph
+ggsave(here::here("figures", "aluminum_contribution_f2.png"), height = 6, width = 8)
 
 ```
 
+```{r echo=FALSE, error=FALSE, message=FALSE, warning=FALSE, include=TRUE}
+# Contribution: Glass
 
 
+glass_cont_long <- read_csv(here::here("data", "glass_contribution.csv")) %>%
+  select(production_norm, transportation_norm, end_of_life_norm, Category) %>%
+  pivot_longer(!Category, names_to = "phases", values_to = "amount")
 
+sel_glass_cont_long <-  glass_cont_long %>% 
+  filter(Category %in% c("Acidification",
+                         "Ecotoxicity",
+                         "Eutrophication",
+                         "Global Warming Air",
+                         "Smog Air",
+                         "Human Toxicity (cancer)",
+                         "Human Toxicity (non-cancer)")) %>%
+  mutate(phases = fct_relevel(phases, "production_norm", "transportation_norm
+", "end_of_life_norm"))
+
+ggplot(data = sel_glass_cont_long,
+       aes(y= amount,
+           fill = phases,
+           x = Category)) +
+            geom_bar(stat = "identity",
+                     position = position_dodge(),
+                     show.legend = TRUE) +
+  scale_fill_futurama() +
+  labs(x = "Environmental Impact Category",
+       y = "Relative to Baseline (EPA)",
+       title = "Contribution to Lifecycle Phase",
+       subtitle = "Glass Bottle",
+       caption = "Global Warming Air includes biogenic carbon.\nAll values were normalized to EPA baseline measures.\n\nESM 273: Winter 2021\nKeene Morrow") +
+  scale_fill_futurama(name = "Phase", labels = c("Production", "End of Life", "Transportation")) +
+  scale_x_discrete(labels = c("Acidification" = "Acidification",
+                              "Ecotoxicity" = "Ecotoxicity",
+                              "Eutrophication" = "Eutrophication",
+                              "Global Warming Air" = "Global\nWarming\nAir",
+                              "Smog Air" = "Smog Air",
+                              "Human Toxicity (cancer)" = "Human\nToxicity\n(cancer)",
+                              "Human Toxicity (non-cancer)" = "Human\nToxicity\n(non-cancer)")) +
+  theme_minimal() +
+  theme(legend.position = "top",
+        plot.caption = element_text(hjust = 0, face = "italic")) +
+  # coord_flip() +
+    theme(
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank())
+
+ggsave(here::here("figures", "glass_contribution_f2.png"), height = 6, width = 8)
+
+```
+
+```{r echo=FALSE, error=FALSE, message=FALSE, warning=FALSE, include=TRUE}
+# Contribution: PET
+
+
+pet_cont_long <- read_csv(here::here("data", "pet_contribution.csv")) %>%
+  select(production_norm, transportation_norm, end_of_life_norm, Category) %>%
+  pivot_longer(!Category, names_to = "phases", values_to = "amount")
+
+sel_pet_cont_long <-  pet_cont_long %>% 
+  filter(Category %in% c("Acidification",
+                         "Ecotoxicity",
+                         "Eutrophication",
+                         "Global Warming Air",
+                         "Smog Air",
+                         "Human Toxicity (cancer)",
+                         "Human Toxicity (non-cancer)")) %>%
+  mutate(phases = fct_relevel(phases, "production_norm", "transportation_norm
+", "end_of_life_norm"))
+
+ggplot(data = sel_pet_cont_long,
+       aes(y= amount,
+           fill = phases,
+           x = Category)) +
+            geom_bar(stat = "identity",
+                     position = position_dodge(),
+                     show.legend = TRUE) +
+  scale_fill_futurama() +
+  labs(x = "Environmental Impact Category",
+       y = "Relative to Baseline (EPA)",
+       title = "Contribution to Lifecycle Phase",
+       subtitle = "PET Bottle",
+       caption = "Global Warming Air includes biogenic carbon.\nAll values were normalized to EPA baseline measures.\n\nESM 273: Winter 2021\nKeene Morrow") +
+  scale_fill_futurama(name = "Phase", labels = c("Production", "End of Life", "Transportation")) +
+  scale_x_discrete(labels = c("Acidification" = "Acidification",
+                              "Ecotoxicity" = "Ecotoxicity",
+                              "Eutrophication" = "Eutrophication",
+                              "Global Warming Air" = "Global\nWarming\nAir",
+                              "Smog Air" = "Smog Air",
+                              "Human Toxicity (cancer)" = "Human\nToxicity\n(cancer)",
+                              "Human Toxicity (non-cancer)" = "Human\nToxicity\n(non-cancer)")) +
+  theme_minimal() +
+  theme(legend.position = "top",
+        plot.caption = element_text(hjust = 0, face = "italic")) +
+  # coord_flip() +
+    theme(
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank())
+
+ggsave(here::here("figures", "PET_contribution_f2.png"), height = 6, width = 8)
+
+```
 
 
 
